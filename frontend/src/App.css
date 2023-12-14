@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@200;300;500;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.icon {
+  color: #4F6F52;
+}
+
+.img {
+  border-top-left-radius: 80px;
+  width: 700px;
+  height: auto;
+}
+
+.smooth-transition {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.comment {
+  border-bottom: 5px;
+  border-right: 5px;
+}
+
+.commentImg {
+  border-radius: 50%;
+  height: 150px;
+  width: 150px;
+  justify-self: center;
+}
+
+@layer base{
+  * {
+    font-family: 'Lexend Deca', sans-serif;
+  }
+  li {
+    @apply p-4
+  }
+  h1 {
+    @apply text-lg
+  }
+  h2 {
+    @apply text-xl font-bold
+  }
+  h3 {
+    @apply text-lg font-bold
+  }
+  button {
+    @apply p-3 rounded bg-lightGreen text-white hover:bg-green
+  }
+  p {
+    @apply font-light
+  }
+  .icon {
+    @apply text-2xl cursor-pointer
+  }
+  .nav {
+    @apply text-white no-underline hover:text-yellow
+  }
+  .service {
+    @apply py-7 flex flex-col items-center gap-2 rounded hover:bg-darkGreen hover:text-white smooth-transition
+  }
+  .comment {
+    @apply rounded p-3 bg-white max-w-[350px] min-h-[200px] shadow-md
+  }
+}
+
+@layer utilities {
+  @variants responsive {
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    .no-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Hide scrollbar for IE, Edge and Firefox */
+    .no-scrollbar {
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+    }
+  }
+}
