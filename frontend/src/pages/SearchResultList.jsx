@@ -9,7 +9,7 @@ export const SearchResultList = () => {
     
   return (
     <div>
-        <h4>SearchResultList</h4>
+        <h4>Results for your search</h4>
         <section className='max-w-[1640] m-auto px-4 py-12'>
         {data.length === 0 ? <h4>No tour found</h4>:
         <div className='grid grid-cols-2 lg:grid-cols-4 gap-6 pt-4'>

@@ -10,6 +10,16 @@ input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;}
 
+  .overlay {
+    opacity: 0;
+  }
+  
+  /* Show the overlay on hover */
+  .image:hover .overlay {
+    opacity: 1;
+    display: flex;
+    }
+
   .nav {
     position: relative;
     text-decoration: none;
@@ -46,15 +56,10 @@ input[type="number"]::-webkit-outer-spin-button {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.comment {
-  border-bottom: 5px;
-  border-right: 5px;
-}
-
 .commentImg {
   border-radius: 50%;
-  height: 150px;
-  width: 150px;
+  height: 105px;
+  width: 105px;
   justify-self: center;
 }
 
@@ -90,7 +95,7 @@ input[type="number"]::-webkit-outer-spin-button {
     @apply py-7 flex flex-col items-center gap-2 rounded-lg hover:bg-white hover:shadow-lg smooth-transition max-w-[280px]
   }
   .comment {
-    @apply rounded p-3 bg-darkGreen max-w-[350px] min-h-[200px] shadow-md
+    @apply rounded p-3 bg-transparent max-w-[350px] min-h-[200px] text-darkGray flex flex-col items-center
   }
   h6 div {
     @apply cursor-pointer

@@ -30,13 +30,13 @@ export const SearchTour = () => {
     }
 
   return (
-    <div className='px-[30px] py-6 max-w-[1170px] mx-auto flex flex-col lg:flex-row justify-between items-center gap-4 lg:gap-x-3  bg-white/20 shadow-2xl backdrop-blur rounded-lg text-white'>
+    <div className='px-[30px] py-6 max-w-[1170px] mx-auto flex flex-col lg:flex-row justify-between items-center gap-4 lg:gap-x-3 bg-white/20 shadow-2xl backdrop-blur rounded-lg text-white'>
                 <div className='flex flex-col border  rounded'>
                     <div className='p-2 px-3 flex gap-3'>
                         <FaLocationArrow className='  w-[15px] self-center'/>
                         <div className='flex flex-col'>
                         <label>Location</label>
-                        <input type="text" placeholder='Where are you going?' ref={locationRef} className='outline-none text-sm bg-transparent' />
+                        <input type="text" placeholder='Where are you going?' ref={locationRef} className='outline-none text-sm bg-transparent text-gray' />
                         </div>
                     </div>
                 </div>
@@ -46,7 +46,7 @@ export const SearchTour = () => {
                     <RiPinDistanceFill className='self-center w-[15px]'/>
                      <div className='flex flex-col'>
                         <label>Distance</label>
-                        <input type="text" placeholder='Distance in km' ref={locationRef} className='outline-none text-sm bg-transparent' />
+                        <input type="text" placeholder='Distance in km' ref={locationRef} className='outline-none text-sm bg-transparent text-gray' />
                     </div>
         </div>
         </div>
@@ -55,7 +55,7 @@ export const SearchTour = () => {
                     <BsFillPeopleFill className='self-center  w-[15px]'/>
                     <div className='flex flex-col'>
                         <label>Number of people</label>
-                        <input type="number" placeholder='0' ref={locationRef} className='outline-none text-sm bg-transparent' />
+                        <input type="number" placeholder='0' ref={locationRef} className='outline-none text-sm bg-transparent text-gray' />
                     </div>
             </div>
         </div>

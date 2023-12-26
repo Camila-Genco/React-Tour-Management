@@ -14,8 +14,8 @@ export const ThankYou = () => {
               <p>Your tour has been succesfully booked.</p>
               <button className='buttonBlue rounded-full' onClick={()=> navigate("/home")}>Back to Home</button>
           </div>
-        
-        
     </section>
+
+    
   )
 }

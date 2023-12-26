@@ -12,7 +12,7 @@ export const Services = () => {
       <div className='flex flex-col items-center mb-7 text-black'>
         <PiMountainsBold size={20} className='text-darkGreen'/>
         <div className='text-3xl tracking-wide font-bold'>Our Services</div>
-        <p className='text-sm uppercase'>What we offer</p>
+        <p className='text-sm'>What we offer</p>
         </div>
         <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-[75%] pb-8'>
           <div className='service'>

@@ -14,6 +14,7 @@ export const Home = () => {
     <UpcomingTours/>
     <Services/>
     <ToursItems/>
+    <Comments/>
     <Contact/>
     </>
   )

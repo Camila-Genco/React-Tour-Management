@@ -48,7 +48,7 @@ export const ToursItems = () => {
         <div className='flex flex-col items-center mb-7'>
         <PiMountainsBold size={20} className='text-darkGreen'/>
         <div className='text-3xl tracking-wide font-bold'>Our Tours</div>
-        <p className='text-black uppercase'>Find your next destination</p>
+        <p className='text-black'>Find your next destination</p>
         </div>
         {/*{
           loading && <h4>Loading...</h4>
@@ -56,7 +56,7 @@ export const ToursItems = () => {
         {
           error && <h4>{error}</h4>
         }*/}
-        {!loading && !error && <div className='grid grid-cols-2 lg:grid-cols-4 gap-6 pt-4'>
+        {!loading && !error && <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 pt-4'>
             {Tours?.map(tour => (
                 <Items key={tour._id} photo={tour.photo} title={tour.title} city={tour.city} price={tour.price} id={tour._id} />
             ))}
