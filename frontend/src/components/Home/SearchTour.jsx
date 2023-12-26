@@ -30,8 +30,8 @@ export const SearchTour = () => {
     }
 
   return (
-    <div className='px-[30px] py-6 max-w-[1170px] mx-auto flex flex-col lg:flex-row justify-between items-center gap-4 lg:gap-x-3 lg:-top-4 bg-white/20 shadow-2xl backdrop-blur rounded-lg text-white'>
-                <div className='flex flex-col border-2  rounded'>
+    <div className='px-[30px] py-6 max-w-[1170px] mx-auto flex flex-col lg:flex-row justify-between items-center gap-4 lg:gap-x-3  bg-white/20 shadow-2xl backdrop-blur rounded-lg text-white'>
+                <div className='flex flex-col border  rounded'>
                     <div className='p-2 px-3 flex gap-3'>
                         <FaLocationArrow className='  w-[15px] self-center'/>
                         <div className='flex flex-col'>
@@ -41,7 +41,7 @@ export const SearchTour = () => {
                     </div>
                 </div>
         
-        <div className='flex flex-col rounded border-2'>
+        <div className='flex flex-col rounded border'>
             <div className='p-2 px-3 flex gap-3'>
                     <RiPinDistanceFill className='self-center w-[15px]'/>
                      <div className='flex flex-col'>
@@ -50,7 +50,7 @@ export const SearchTour = () => {
                     </div>
         </div>
         </div>
-        <div className='flex flex-col border-2  rounded'>
+        <div className='flex flex-col border  rounded'>
             <div className='p-2 px-3 flex gap-3'>
                     <BsFillPeopleFill className='self-center  w-[15px]'/>
                     <div className='flex flex-col'>

@@ -3,7 +3,7 @@ import {SearchTour} from "./SearchTour.jsx"
 
 export const Hero = () => {
   return (
-    <div className='max-w-[1640px] mx-[30px] pt-10'>
+    <div className='max-w-[1640px] mx-[30px] pt-2'>
       <div className='max-h-[500px] relative'>
           <div className='absolute w-full h-full max-h-[500px] bg-black/40 flex flex-col items-center rounded-full pt-20'>
               <span className='text-gray'>Travel with Us</span>

@@ -8,44 +8,30 @@ import { PiMountainsBold } from 'react-icons/pi';
 
 export const Services = () => {
   return (
-    <div className='py-6 flex flex-col items-center justify-center text-darkGreen mx-5'>
+    <div className='py-6 flex flex-col items-center justify-cente bg-lightGreen'>     
       <div className='flex flex-col items-center mb-7 text-black'>
-        <PiMountainsBold size={20} className='text-yellow'/>
-        <div className='text-3xl tracking-wide'>Our Services</div>
-        <p className='text-sm'>What we have to offer</p>
+        <PiMountainsBold size={20} className='text-darkGreen'/>
+        <div className='text-3xl tracking-wide font-bold'>Our Services</div>
+        <p className='text-sm'>What we offer</p>
         </div>
-        <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6'>
+        <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-[75%] pb-8'>
           <div className='service'>
-              <MdFastfood size={50} className='text-lightGreen'/>
-              <h3 className='text-xl'>Food and Drinks</h3>
-              <p className='text-center w-[70%]'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti aperiam.</p>
-          </div>
-          <div className='service'>
-              <FaHotel size={50} className='text-lightGreen'/>
+              <FaHotel size={50} className='text-darkGreen'/>
               <h3 className='text-xl'> Affordable Hotels</h3>
               <p className='text-center w-[70%]'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti aperiam.</p>
           </div>
           <div className='service'>
-              <BsFillMegaphoneFill size={50} className='text-lightGreen'/>
-              <h3 className='text-xl'>Best Guides</h3>
-              <p className='text-center w-[70%]'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti aperiam.</p>
-          </div>
-          <div className='service'>
-              <BiWorld size={50} className='text-lightGreen'/>
-              <h3 className='text-xl'>Around the Globe</h3>
-              <p className='text-center w-[70%]'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti aperiam.</p>
-          </div>
-          <div className='service'>
-              <FaPlaneDeparture size={50} className='text-lightGreen'/>
+              <FaPlaneDeparture size={50} className='text-darkGreen'/>
               <h3 className='text-xl'>Fastest Travel</h3>
               <p className='text-center w-[70%]'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti aperiam.</p>
           </div>
           <div className='service'>
-              <FaPersonHiking size={50} className='text-lightGreen'/>
-              <h3 className='text-xl'>Adventure</h3>
+              <FaPersonHiking size={50} className='text-darkGreen'/>
+              <h3 className='text-xl'>Best Guides</h3>
               <p className='text-center w-[70%]'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti aperiam.</p>
           </div>
           </div>
-    </div>
+          </div>
+
   )
 }

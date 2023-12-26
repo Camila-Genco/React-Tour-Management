@@ -46,8 +46,8 @@ export const ToursItems = () => {
   return (
     <section className='max-w-[1640] px-4 py-12 mb-10 text-sm rounded mx-8'>
         <div className='flex flex-col items-center mb-7'>
-        <PiMountainsBold size={20} className='text-yellow'/>
-        <div className='text-3xl tracking-wide'>Our Tours</div>
+        <PiMountainsBold size={20} className='text-darkGreen'/>
+        <div className='text-3xl tracking-wide font-bold'>Our Tours</div>
         <p className='text-black'>Find your next destination</p>
         </div>
         {/*{

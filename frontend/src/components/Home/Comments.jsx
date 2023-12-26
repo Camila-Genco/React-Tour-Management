@@ -7,7 +7,7 @@ export const Comments = () => {
     <div className='w-full mx-auto p-4 text-sm mb-7 '>
         <div className='flex flex-col items-center mb-[90px]'>
             <PiMountainsBold size={20} className='text-yellow'/>
-            <div className='text-3xl tracking-wide'>Customer Reviews</div>
+            <div className='text-3xl tracking-wide font-bold'>Customer Reviews</div>
             <p >What our customers said about us</p>
         </div>
         <div className='grid grid-cols-1 gap-20 md:gap-0 md:grid-cols-3 place-items-center'>

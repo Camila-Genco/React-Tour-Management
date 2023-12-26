@@ -83,7 +83,7 @@ input[type="number"]::-webkit-outer-spin-button {
     @apply text-darkGray no-underline hover:text-black
   }
   .service {
-    @apply py-7 flex flex-col items-center gap-2 rounded hover:bg-darkGreen hover:text-white smooth-transition
+    @apply py-7 flex flex-col items-center gap-2 rounded-lg hover:bg-white hover:shadow-lg smooth-transition max-w-[280px]
   }
   .comment {
     @apply rounded p-3 bg-white max-w-[350px] min-h-[200px] shadow-md
