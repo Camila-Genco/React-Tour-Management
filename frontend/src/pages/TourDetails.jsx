@@ -1,10 +1,12 @@
 import React, { useContext, useRef, useState } from 'react'
-import {BsFillStarFill} from "react-icons/bs"
+import {BsFillPeopleFill, BsFillStarFill} from "react-icons/bs"
+import { FaLocationDot } from "react-icons/fa6";
 import {CgProfile} from "react-icons/cg"
 import { useNavigate, useParams } from 'react-router-dom'
 import useFetch from '../hooks/useFetch'
 import { BASE_URL } from '../utils/config'
 import {AuthContext} from "../context/AuthContext.js"
+import { MdOutlineAttachMoney } from 'react-icons/md';
 
 export const TourDetails = () => {
   const {user} = useContext(AuthContext)
@@ -13,6 +15,13 @@ export const TourDetails = () => {
   const {title, photo, desc, price, reviews, city, maxGroupSize} = tour
   const reviewsMsgRef = useRef()
   const [tourRating, setTourRating] = useState(null)
+  
+  const [userRating, setUserRating] = useState(0); // Initial state is 0 for no rating selected
+
+  const handleRatingClick = (rating) => {
+    setUserRating(rating === userRating ? 0 : rating); // Toggle rating if clicked twice
+  };
+
   const navigate = useNavigate()
   const [booking, setBooking] = useState({
     userId: user && user._id,
@@ -109,54 +118,60 @@ export const TourDetails = () => {
    }
 
   return (
-    <section className='max-w-[1640px] mx-auto my-4'>
+    <section className='max-w-[1640px] mx-auto py-4 bg-gradient-to-b from-lightGreen to-white '>
       <div className="max-w-[1100px] grid grid-cols-1 md:grid-cols-[63%_37%] mx-auto gap-3">
         <div id='product' className='grid grid-cols w-full'>
           <img src={Tour.photo} alt="" className='rounded' />
-          <div id='description' className='border border-gray-400 p-4 mt-4 rounded bg-white font-light '>
-            <h2>{Tour.title}</h2>
-            <div className='flex gap-4 text-sm'>
-              <div className='flex'>
-              <BsFillStarFill className='text-yellow mr-2'/>
+          <div id='description' className='border border-gray-400 p-4 mt-4 rounded bg-white font-light shadow-md'>
+            <h4>{Tour.title}</h4>
+            <div className='flex gap-4 text-sm mb-2'>
+              <div className='flex items-center'>
+              <BsFillStarFill className='text-yellow mr-1'/>
               <span>{avgRating === 0 ? null : avgRating} ({reviews?.length})</span>
-              </div>
-              <div className='flex'>
-              <BsFillStarFill className='text-yellow mr-2'/>
-              <span>{Tour.city}</span>
               </div>
             </div>
             <div className='flex gap-4 text-sm'>
-              <div className='flex'>
-              <BsFillStarFill className='text-yellow mr-2'/>
+              <div className='flex items-center'>
+              <FaLocationDot className='text-darkGreen mr-1'/>
               <span>{Tour.city}</span>
               </div>
-              <div className='flex'>
-              <BsFillStarFill className='text-yellow mr-2'/>
-              <span>${Tour.price} per person</span>
+              <div className='flex items-center'>
+              <MdOutlineAttachMoney className='text-darkGreen'/>
+              <span>{Tour.price} per person</span>
               </div>
-              <div className='flex'>
-              <BsFillStarFill className='text-yellow mr-2'/>
+              <div className='flex items-center'>
+              <BsFillPeopleFill className='text-darkGreen mr-1'/>
               <span>{maxGroupSize} people</span>
               </div>
             </div>
             <div className='mt-3'>
               <h5>Description</h5>
-              <p className='text-sm'>{desc}</p>
+              <p className='text-sm'>{desc} Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae repudiandae illo dolore quisquam recusandae itaque laboriosam odio nostrum provident, facilis blanditiis similique harum vitae unde expedita in deserunt consectetur eos.</p>
             </div>
           </div>
-          <div id='comments' className='border border-gray-400 mt-4 rounded bg-white p-4'>
-            <h3>Reviews ({reviews?.length} reviews)</h3>
-            <div className='flex gap-3'>
-              <div className='flex items-center text-yellow cursor-pointer hover:text-orange-700' onClick={()=> setTourRating(1)}><span>1</span><BsFillStarFill className='ml-2'/></div>
-              <div className='flex items-center text-yellow cursor-pointer hover:text-orange-700' onClick={()=> setTourRating(2)}><span>2</span><BsFillStarFill className='ml-2'/></div>
-              <div className='flex items-center text-yellow cursor-pointer hover:text-orange-700' onClick={()=> setTourRating(3)}><span>3</span><BsFillStarFill className='ml-2'/></div>
-              <div className='flex items-center text-yellow cursor-pointer hover:text-orange-700' onClick={()=> setTourRating(4)}><span>4</span><BsFillStarFill className=' ml-2'/></div>
-              <div className='flex items-center text-yellow cursor-pointer hover:text-orange-700' onClick={()=> setTourRating(5)}><span>5</span><BsFillStarFill className='ml-2'/></div>              
+          <div id='comments' className='border border-gray-400 mt-4 rounded bg-white p-4 shadow-md'>
+            <div className='flex gap-2 items-center'>
+            <h5>Reviews</h5>
+            <span className='text-sm'>({reviews?.length} reviews)</span>
             </div>
+            <div className='flex gap-3 font-light'>
+      {[1, 2, 3, 4, 5].map((rating) => (
+        <div
+          key={rating}
+          className={`flex items-center text-yellow cursor-pointer hover:text-orange-700 ${
+            rating <= userRating ? 'text-orange-700' : ''
+          }`}
+          onClick={() => {handleRatingClick(rating); setTourRating(rating)}}
+        >
+          <span>{rating}</span>
+          <BsFillStarFill className='ml-1' color={rating <= userRating ? 'text-orange-700' : 'text-black'} />
+        </div>
+      ))}
+    </div>
             <div className='w-[85%] border-2 border-gray rounded-full p-1 mx-auto my-3'>
               <form action="" onSubmit={submitHandler} className='flex justify-between w-full'>
-                <input type="text" placeholder='Share your experience' ref={reviewsMsgRef} className='outline-none rounded-full text-sm p-2 w-full'/>
-                <button className='rounded-full self-end'>Send</button>
+                <input type="text" placeholder='Share your experience' ref={reviewsMsgRef} className='outline-none rounded-full text-sm py-2 px-3 w-full text-darkGray font-light'/>
+                <button className='rounded-full self-end buttonBlue'>Send</button>
               </form>
             </div>
             <div>
@@ -196,13 +211,13 @@ export const TourDetails = () => {
             <h4 className='text-lg mt-4'>Your Booking</h4>
             <form action="" onSubmit={(e)=> handleClick} className='grid grid-cols gap-3 rounded'>
               <label htmlFor="fullName">Name and Surname</label>
-              <input id="fullName" type="text" onChange={handleChange} className='outline-none  bg-lightGreen p-2 rounded'/>            
+              <input id="fullName" type="text" onChange={handleChange} className='outline-none  bg-lightGreen p-2 rounded text-darkGray px-3'/>            
               <label htmlFor="phone">Phone Number</label>
-              <input id="phone" type="text" onChange={handleChange} className='outline-none  bg-lightGreen p-2 rounded'/>   
+              <input id="phone" type="text" onChange={handleChange} className='outline-none  bg-lightGreen p-2 rounded text-darkGray px-3'/>   
               <label htmlFor="bookedAt">Date</label>           
-              <input id="bookedAt" type="date" onChange={handleChange} className="outline-none text-sm  bg-lightGreen p-2 rounded"/>
+              <input id="bookedAt" type="date" onChange={handleChange} className="outline-none text-sm  bg-lightGreen p-2 rounded text-darkGray px-3"/>
               <label htmlFor="guestSize">Guest Number</label>
-              <input id="guestSize" type="number" name="" onChange={handleChange} className='outline-none bg-lightGreen p-2 rounded'/>              
+              <input id="guestSize" type="number" name="" onChange={handleChange} className='outline-none bg-lightGreen p-2 rounded text-darkGray px-3'/>              
             </form>
             <div className='flex justify-between mx-3 text-md text-gray-400 mt-5'>
               <p>${price} per person</p>
@@ -217,7 +232,7 @@ export const TourDetails = () => {
               <span>${totalPrice}</span>
             </div>
             <div className='flex justify-center pb-3'>
-            <button onClick={handleClick} className='rounded-full px-8 bg-yellow hover:bg-brown font-bold'>Book Now</button>
+            <button onClick={handleClick} className='rounded-full px-8 buttonWhite hover:bg-white hover:font-bold hover:text-darkGreen'>Book Now</button>
             </div>
           </div>
         </div>

@@ -32,6 +32,10 @@ input[type="number"]::-webkit-outer-spin-button {
     width: 100%; /* Underline width */
   }
 
+  .custom-height {
+    min-height: calc(100vh - 64px); /* Subtracting 64px (example height) for the navbar */
+  }
+
 .img {
   border-top-left-radius: 80px;
   width: 700px;
@@ -86,11 +90,12 @@ input[type="number"]::-webkit-outer-spin-button {
     @apply py-7 flex flex-col items-center gap-2 rounded-lg hover:bg-white hover:shadow-lg smooth-transition max-w-[280px]
   }
   .comment {
-    @apply rounded p-3 bg-white max-w-[350px] min-h-[200px] shadow-md
+    @apply rounded p-3 bg-darkGreen max-w-[350px] min-h-[200px] shadow-md
   }
   h6 div {
     @apply cursor-pointer
   }
+  
   .buttonWhite {
     @apply bg-white border border-darkGreen text-darkGreen hover:bg-darkGreen hover:text-white rounded
   }
@@ -99,6 +104,9 @@ input[type="number"]::-webkit-outer-spin-button {
   }
   .icon {
     @apply text-darkGreen
+  }
+  input {
+    @apply outline-none text-darkGray
   }
 }
 

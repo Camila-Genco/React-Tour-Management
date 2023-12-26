@@ -46,20 +46,18 @@ export const Login = () => {
 
   
   return (
-    <div className='w-full min-h-screen flex items-center justify-center text-darkGreen'>
-      <div className='grid md:grid-cols-2 absolute max-h-[800px] top-40 w-[75%] my-auto'>
-        <div className='hidden rounded-l-xl bg-white md:flex items-center'><img src={image} className="object-contain" alt="" /></div>
-        <div className="max-w-2xl h-auto bg-white shadow-lg p-10 rounded-xl md:rounded-none md:rounded-r-xl overflow-visible flex flex-col">
+    <div className='w-full custom-height flex items-center justify-center text-white font-light bg-gradient-to-b from-lightGreen to-white' >     
+        <div className="min-w-[40%] h-auto bg-darkGreen shadow-lg p-10 rounded-xl overflow-visible flex flex-col">
         <BiUserCircle className='h-14 w-auto left-1/'/>
         <h2 className='text-center'>Login</h2>
-        <p className='text-center'>Don't have an account yet? <Link to="/register">Sign Up</Link></p>
+        <p className='text-center'>Don't have an account yet? <Link to="/register" className='text-white font-bold no-underline'>Sign Up</Link></p>
         <form action="" className='flex flex-col'>
-          <input type="email" name="email" id="email" placeholder='Email' required onChange={handleChange} className='my-4 rounded p-2 border-2 border-green'/>
-          <input type="password" name="password" id="password" placeholder='Password' required  onChange={handleChange} className='my-4 rounded p-2 border-2 border-green' />
-        <button type="submit" onClick={handleClick} className='rounded-xl h-12 my-4 bg-green hover:bg-darkGreen tracking-widest'>Login</button>
+          <input type="email" name="email" id="email" placeholder='Email' required onChange={handleChange} className='my-4 rounded p-2 bg-lightGreen'/>
+          <input type="password" name="password" id="password" placeholder='Password' required  onChange={handleChange} className='my-4 rounded p-2  bg-lightGreen' />
+        <button type="submit" onClick={handleClick} className='rounded-xl h-12 my-4 buttonWhite  hover:bg-white hover:font-bold hover:text-darkGreen tracking-widest'>Login</button>
         </form>
     </div>
-    </div>
+    
 </div>
   )
 }

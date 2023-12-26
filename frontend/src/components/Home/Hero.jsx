@@ -5,7 +5,7 @@ export const Hero = () => {
   return (
     <div className='max-w-[1640px] mx-[30px] pt-2'>
       <div className='max-h-[500px] relative'>
-          <div className='absolute w-full h-full max-h-[500px] bg-black/40 flex flex-col items-center rounded-full pt-20'>
+          <div className='absolute w-full h-full max-h-[500px] bg-black/40 flex flex-col items-center rounded-full pt-20 shadow-lg shadow-black'>
               <span className='text-gray'>Travel with Us</span>
               <h1 className='text-white text-center'>Find And Book <br/>A Great <span className='text-gray-200'>Experience</span></h1>
               <div className='pt-16'>

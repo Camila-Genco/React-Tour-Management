@@ -48,7 +48,7 @@ export const ToursItems = () => {
         <div className='flex flex-col items-center mb-7'>
         <PiMountainsBold size={20} className='text-darkGreen'/>
         <div className='text-3xl tracking-wide font-bold'>Our Tours</div>
-        <p className='text-black'>Find your next destination</p>
+        <p className='text-black uppercase'>Find your next destination</p>
         </div>
         {/*{
           loading && <h4>Loading...</h4>
