@@ -5,9 +5,32 @@
 @tailwind utilities;
 
 
-.icon {
-  color: #4F6F52;
-}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;}
+
+  .nav {
+    position: relative;
+    text-decoration: none;
+    transition: color 0.3s; /* Transition for color change */
+  }
+  
+  .nav::before {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: transparent;
+    transition: background-color 0.3s, width 0.3s; /* Transition for underline */
+  }
+  
+  .nav:hover::before {
+    background-color: #3F5CB8; /* Change to your preferred underline color */
+    width: 100%; /* Underline width */
+  }
 
 .img {
   border-top-left-radius: 80px;
@@ -48,7 +71,7 @@
     @apply text-lg font-bold
   }
   button {
-    @apply p-3 rounded bg-lightGreen text-white hover:bg-green
+    @apply px-3 py-2 rounded
   }
   p {
     @apply font-light
@@ -57,13 +80,25 @@
     @apply text-2xl cursor-pointer
   }
   .nav {
-    @apply text-white no-underline hover:text-yellow
+    @apply text-darkGray no-underline hover:text-black
   }
   .service {
     @apply py-7 flex flex-col items-center gap-2 rounded hover:bg-darkGreen hover:text-white smooth-transition
   }
   .comment {
     @apply rounded p-3 bg-white max-w-[350px] min-h-[200px] shadow-md
+  }
+  h6 div {
+    @apply cursor-pointer
+  }
+  .buttonWhite {
+    @apply bg-white border border-darkGreen text-darkGreen hover:bg-darkGreen hover:text-white rounded
+  }
+  .buttonBlue {
+    @apply bg-darkGreen border border-darkGreen hover:bg-blue-800 rounded text-white
+  }
+  .icon {
+    @apply text-darkGreen
   }
 }
 

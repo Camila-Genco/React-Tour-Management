@@ -10,12 +10,13 @@ module.exports = {
           'lexend': ['"Lexend Deca"', 'sans-serif'],
         },
       colors: {
-          darkGreen: '#10393B',
-          green: '#114C50',
-          lightGreen: '#347463',
+          darkGreen: '#3F5CB8',
+          green: '#6d9773',
+          lightGreen: '#CCD4E7',
           yellow: '#EF8450',
           brown: '#ed7439',
-          gray:'#D0D4CA'
+          gray:'#D0D4CA',
+          darkGray: '#a6a9a1'
     },
     
   },

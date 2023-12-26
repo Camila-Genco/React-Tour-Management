@@ -3,7 +3,7 @@ import { Layout } from "./components/Layout/Layout";
 
 function App() {
   return (
-    <body className="bg-gray">
+    <body>
       <Layout/>
     </body>
   );

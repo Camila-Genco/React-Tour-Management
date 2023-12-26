@@ -30,36 +30,36 @@ export const SearchTour = () => {
     }
 
   return (
-    <div className='px-[30px] py-6 max-w-[1170px] mx-auto flex flex-col lg:flex-row justify-between gap-4 lg:gap-x-3 relative lg:-top-4 bg-white lg:bg-transparent shadow-2xl lg:backdrop-blur rounded-lg text-black'>
-                <div className='flex flex-col border-2 border-lightGreen rounded'>
+    <div className='px-[30px] py-6 max-w-[1170px] mx-auto flex flex-col lg:flex-row justify-between items-center gap-4 lg:gap-x-3 lg:-top-4 bg-white/20 shadow-2xl backdrop-blur rounded-lg text-white'>
+                <div className='flex flex-col border-2  rounded'>
                     <div className='p-2 px-3 flex gap-3'>
-                        <FaLocationArrow className=' text-green w-[15px] self-center'/>
+                        <FaLocationArrow className='  w-[15px] self-center'/>
                         <div className='flex flex-col'>
                         <label>Location</label>
-                        <input type="text" placeholder='Where are you going?' ref={locationRef} className='outline-none text-sm' />
+                        <input type="text" placeholder='Where are you going?' ref={locationRef} className='outline-none text-sm bg-transparent' />
                         </div>
                     </div>
                 </div>
         
-        <div className='flex flex-col rounded border-2 border-lightGreen'>
+        <div className='flex flex-col rounded border-2'>
             <div className='p-2 px-3 flex gap-3'>
-                    <RiPinDistanceFill className='self-center text-green w-[15px]'/>
+                    <RiPinDistanceFill className='self-center w-[15px]'/>
                      <div className='flex flex-col'>
                         <label>Distance</label>
-                        <input type="text" placeholder='Distance in km' ref={locationRef} className='outline-none text-sm' />
+                        <input type="text" placeholder='Distance in km' ref={locationRef} className='outline-none text-sm bg-transparent' />
                     </div>
         </div>
         </div>
-        <div className='flex flex-col border-2 border-lightGreen rounded'>
+        <div className='flex flex-col border-2  rounded'>
             <div className='p-2 px-3 flex gap-3'>
-                    <BsFillPeopleFill className='self-center text-green w-[15px]'/>
+                    <BsFillPeopleFill className='self-center  w-[15px]'/>
                     <div className='flex flex-col'>
                         <label>Number of people</label>
-                        <input type="number" placeholder='0' ref={locationRef} className='outline-none text-sm' />
+                        <input type="number" placeholder='0' ref={locationRef} className='outline-none text-sm bg-transparent' />
                     </div>
             </div>
         </div>
-        <button className='rounded w-full lg:max-w-[162px] h-10 flex justify-center items-center' onClick={searchHandler}><BsSearch className='text-white'/></button>
+        <button className='rounded w-full lg:max-w-[162px] h-10 flex justify-center items-center bg-blue-800' onClick={searchHandler}><BsSearch className='text-white'/></button>
     </div>
   )
 }

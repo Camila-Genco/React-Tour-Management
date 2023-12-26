@@ -1,43 +1,49 @@
 import React from 'react'
 import {BsFacebook, BsInstagram, BsGithub} from "react-icons/bs"
+import { FaRegPaperPlane } from 'react-icons/fa'
 
 export const Footer = () => {
   return (
     <footer>
-        <div className="p-10 bg-[#092635] text-white text-sm buttom-0 font-light">
-            <div className="max-w-7xl mx-auto">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2">
-                    <div className="mb-4">
-                        <h4>Company</h4>
-                        Buenos Aires, Argentina <br/>
-                        <strong>Phone: </strong>11-44362933 <br/>
-                        <strong>Email: </strong> gencocamila@gmail.com
+        <div className="p-10 bg-darkGreen text-white text-sm buttom-0 font-light">
+            <div className="px-5 text-sm">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 lg:gap-3">
+                    <div className="mb-4 px-2">
+                        <div className='flex  gap-2  mb-3'>
+                        <FaRegPaperPlane className='text-2xl'/>
+                        <h1 className='text-2xl'>WANDERWAYS</h1>
+                        </div>
+                        <p className='text-gray'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit at alias quod aliquid!</p>
+                        <div className='flex flex-start gap-12 pt-3'>
+                        <BsFacebook className='w-5 h-6 cursor-pointer'/>
+                        <BsInstagram className='w-5 h-6 cursor-pointer'/>
+                        <BsGithub className='w-5 h-6 cursor-pointer'/>
+                        </div>
                     </div>
-                    <div className="mb-2">
-                    <h4>Discover</h4>
+                    <div className="mb-2 items-start">
+                    <h6>Discover</h6>
                         <div>Home</div>
                         <div>About</div>
                         <div>Tours</div>
                     </div>
                     <div className="mb-2">
-                    <h4>Quick Links</h4>
-                        <div>Login</div>
-                        <div>Register</div>
+                    <h6>Support</h6>
+                        <div>FAQ</div>
+                        <div>Features</div>
+                        <div>Contact</div>
+                        <div>Reporting</div>
                     </div>
                     <div className='mb-2'>
-                        <h4>Contact Us</h4>
-                        <div className='flex flex-col gap-1'>
-                        <BsFacebook className='w-5 h-6 cursor-pointer'/>
-                        <BsInstagram className='w-5 h-6 cursor-pointer'/>
-                        <BsGithub className='w-5 h-6 cursor-pointer'/>
-                    </div>
+                        <h6>Contact Us</h6>
+                        <div>+000 00000000</div>
+                        <div>mail@mail.com</div>                     
                     </div>
                 </div>
             </div>
         </div>
-        <div className='w-full text-xs px-10 bg-[#092635] text-white'>
-            <div className='max-2-7xl flex flex-col cm:flex-row'>
-                    <div className='text-center font-light'>Copyright 2023; Online illustrations by <a href="https://storyset.com/online">Storyset</a></div>
+        <div className='w-full text-xs text-white bg-darkGreen'>
+            <div className='max-2-7xl flex flex-col md:flex-row justify-between'>
+                    <div className='text-center font-light'>Copyright 2023;</div>
                     
             </div>
         </div>
