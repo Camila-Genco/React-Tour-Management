@@ -20,14 +20,14 @@ export const Footer = () => {
             <BsGithub className='w-5 h-6 cursor-pointer' />
           </div>
         </div>
-        <div className="mb-6 lg:mb-2">
+        <div className="mb-6 lg:mb-2 footerLinks">
           <h6>Discover</h6>
           <div>Home</div>
           <div>About</div>
           <div>Tours</div>
           <div>Account</div>
         </div>
-        <div className="mb-6 lg:mb-2">
+        <div className="mb-6 lg:mb-2 footerLinks">
           <h6>Support</h6>
           <div>FAQ</div>
           <div>Features</div>
