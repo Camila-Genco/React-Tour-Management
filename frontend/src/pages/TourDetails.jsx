@@ -1,28 +1,31 @@
 import React, { useContext, useRef, useState } from 'react'
-import {BsFillPeopleFill, BsFillStarFill} from "react-icons/bs"
-import { FaLocationDot } from "react-icons/fa6";
-import {CgProfile} from "react-icons/cg"
+
 import { useNavigate, useParams } from 'react-router-dom'
-import useFetch from '../hooks/useFetch'
-import { BASE_URL } from '../utils/config'
+
+import {BsFillPeopleFill, BsFillStarFill} from "react-icons/bs"
+import {MdOutlineAttachMoney} from 'react-icons/md';
+import {FaLocationDot} from "react-icons/fa6";
+import {CgProfile} from "react-icons/cg"
+
 import {AuthContext} from "../context/AuthContext.js"
-import { MdOutlineAttachMoney } from 'react-icons/md';
+import { BASE_URL } from '../utils/config'
+import useFetch from '../hooks/useFetch'
 
 export const TourDetails = () => {
   const {user} = useContext(AuthContext)
   const {id} = useParams()
+  const reviewsMsgRef = useRef()
+  const navigate = useNavigate()
   const {data:tour} = useFetch(`${BASE_URL}/tours/${id}`)
   const {title, photo, desc, price, reviews, city, maxGroupSize} = tour
-  const reviewsMsgRef = useRef()
-  const [tourRating, setTourRating] = useState(null)
   
-  const [userRating, setUserRating] = useState(0); // Initial state is 0 for no rating selected
+  const [tourRating, setTourRating] = useState(null)
+  const [userRating, setUserRating] = useState(0);
 
   const handleRatingClick = (rating) => {
-    setUserRating(rating === userRating ? 0 : rating); // Toggle rating if clicked twice
+    setUserRating(rating === userRating ? 0 : rating);
   };
-
-  const navigate = useNavigate()
+  
   const [booking, setBooking] = useState({
     userId: user && user._id,
     userEmail: user && user.email,
@@ -68,9 +71,7 @@ export const TourDetails = () => {
     } catch (err) {
       alert(err.message)
     }
-
   }
-
   
   const serviceFee = 10;
   const totalPrice = Number(price) * Number(booking.guestSize) + Number(serviceFee);
@@ -237,7 +238,6 @@ export const TourDetails = () => {
           </div>
         </div>
       </div>
-
     </section>
   )
 }

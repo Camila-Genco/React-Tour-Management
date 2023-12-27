@@ -27,7 +27,7 @@ export const Header = () => {
     <div className='flex justify-between items-center h-20 px-4 text-black'>
         <div className={logo? 'hidden' : 'flex cursor-pointer'}>
             <FaRegPaperPlane className='text-xl mt-1 mr-1'/>
-            <h1 className='text-2xl items-center'>WANDERWAYS</h1>
+            <h2 className='text-2xl items-center'>WANDERWAYS</h2>
         </div>
         <ul className='hidden md:flex mt-3'>
             <li><NavLink to={"/"} className="nav">Home</NavLink></li>
@@ -52,7 +52,7 @@ export const Header = () => {
         : 'absolute left-[-100%]' }>
         <div className='flex'>
             <FaRegPaperPlane className='text-xl mt-1 mr-1'/>
-            <h1 className='text-2xl items-center'>WANDERWAYS</h1>
+            <h2 className='text-2xl items-center'>WANDERWAYS</h2>
         </div>
             <ul>
                 <li className='cursor-pointer hover:text-darkGreen'>Home</li>

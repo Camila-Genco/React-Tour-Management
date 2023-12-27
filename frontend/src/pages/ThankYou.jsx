@@ -1,10 +1,10 @@
 import React from 'react'
-import {BsFillCalendarCheckFill} from "react-icons/bs"
+
 import { useNavigate } from 'react-router-dom'
-import image from "../assets/images/Successful purchase-cuate.svg"
+import {BsFillCalendarCheckFill} from "react-icons/bs"
 
 export const ThankYou = () => {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
   return (
     <section className='w-full custom-height flex items-center justify-center font-light bg-gradient-to-b from-lightGreen to-white'>
@@ -14,8 +14,6 @@ export const ThankYou = () => {
               <p>Your tour has been succesfully booked.</p>
               <button className='buttonBlue rounded-full' onClick={()=> navigate("/home")}>Back to Home</button>
           </div>
-    </section>
-
-    
+    </section>    
   )
 }
