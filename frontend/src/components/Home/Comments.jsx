@@ -5,7 +5,7 @@ import { RiDoubleQuotesR } from 'react-icons/ri'
 
 export const Comments = () => {
   return (
-    <div className='w-full mx-auto pb-6 text-sm bg-gradient-to-t from-lightGreen to-white h-full'>        
+    <div className='gradient mx-auto pb-6 text-sm'>   
         <div className='sectionTitle'>
             <PiMountainsBold size={20} className='text-darkGreen'/>
             <div>Customer Reviews</div>

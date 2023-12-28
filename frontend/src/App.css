@@ -11,7 +11,8 @@ input[type="number"]::-webkit-outer-spin-button {
   margin: 0;}
 
 input[type="email"],
-input[type="password"] {
+input[type="password"]
+{
   padding: 0.5rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
@@ -25,6 +26,8 @@ input[type="password"] {
   height: 1.5rem; 
   cursor: pointer;
 }
+
+
 
   .overlay {
     opacity: 0;
@@ -97,6 +100,9 @@ input[type="password"] {
   h3 {
     @apply font-bold text-3xl tracking-wide
   }
+  h5 {
+    @apply text-lg
+  }
   button {
     @apply px-3 py-2 rounded
   }
@@ -109,11 +115,14 @@ input[type="password"] {
   .heroImg {
     @apply w-full max-h-[500px] object-cover rounded-full
   }
-  .icon {
-    @apply text-2xl cursor-pointer
+  .mediaIcons > * {
+    @apply text-2xl cursor-pointer text-darkGreen
   }
   .nav {
     @apply text-darkGray no-underline hover:text-black
+  }
+  .mobileNavList > * {
+    @apply first-letter:cursor-pointer hover:text-darkGreen
   }
   .sectionTitle {
     @apply flex flex-col items-center mb-7
@@ -157,9 +166,6 @@ input[type="password"] {
   .buttonBlue {
     @apply bg-darkGreen border border-darkGreen hover:bg-blue-800 rounded text-white
   }
-  .icon {
-    @apply text-darkGreen
-  }
   input {
     @apply text-sm outline-none px-2 text-darkGray
   }
@@ -174,6 +180,33 @@ input[type="password"] {
   }
   .submitButton {
     @apply rounded-xl h-12 my-4 bg-white border border-darkGreen text-darkGreen hover:bg-white hover:font-bold tracking-widest
+  }
+  .overlay {
+    @apply hidden rounded absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 text-white items-start justify-start p-5 transition-opacity duration-300
+  }
+  .promoCard {
+    @apply max-w-[250px] h-[350px] object-cover rounded lg:mt-2 image relative 
+  }
+  .promoCard img {
+    @apply max-w-[250px] h-[350px] object-cover rounded 
+  }
+  .gradient {
+    @apply bg-gradient-to-t from-lightGreen to-white w-full h-full
+  }
+  .checkout input {
+    @apply bg-lightGreen p-2 rounded text-darkGray px-3
+  }
+  .resume div {
+    @apply flex justify-between mx-3 text-gray
+  }
+  .detailContainer {
+    @apply p-4 mt-4 border border-gray rounded bg-white shadow-md font-light
+  }
+  .tourDetail {
+    @apply flex gap-4 text-sm 
+  }
+  .tourDetail div {
+    @apply flex items-center
   }
   .footerLinks div{
     @apply cursor-pointer
