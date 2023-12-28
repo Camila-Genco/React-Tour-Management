@@ -56,7 +56,7 @@ export const Checkout = ({title, price, reviews, avgRating}) => {
   return (
     <div id='cart' className='w-full px-3 max-h-[760px] font-light bg-darkGreen text-white shadow-md rounded'>
             <div className='flex justify-between py-4 px-2 text-center border-b-2 border-gray'>
-                <h3 className='text-lg'>${price} /per person</h3>
+                <h5>${price} /per person</h5>
                 <div className='flex items-center'>
                     <BsFillStarFill className='text-yellow'/>
                     <span className='mx-2 text-sm'>{avgRating === 0 ? null : avgRating} ({reviews?.length})</span>

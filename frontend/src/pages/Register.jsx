@@ -7,15 +7,14 @@ import { AuthContext } from '../context/AuthContext'
 import { BASE_URL } from '../utils/config'
 
 export const Register = () => {
+  const {dispatch} = useContext(AuthContext)
+  const navigate = useNavigate()
 
   const [credentials, setCredentials] = useState({
     username: undefined,
     email: undefined,
     password: undefined
   })
-
-  const {dispatch} = useContext(AuthContext)
-  const navigate = useNavigate()
 
   const handleChange = e =>{
     setCredentials(prev =>({...prev, [e.target.id]:e.target.value}) )

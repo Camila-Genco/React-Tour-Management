@@ -1,7 +1,6 @@
 import React, { useState, useContext } from 'react'
-import { NavLink, Link, useNavigate } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 import {AiOutlineClose, AiOutlineMenu} from "react-icons/ai"
-import {BsPerson} from "react-icons/bs"
 import { FaFacebook, FaInstagram, FaLinkedin, FaPinterest, FaRegBell, FaRegPaperPlane, FaTwitter } from "react-icons/fa"
 
 import { AuthContext } from '../../context/AuthContext'
@@ -35,10 +34,16 @@ export const Header = () => {
                 <li><NavLink to={"/tours"} className="nav">Destinations</NavLink></li>
             </ul>
             <div className='hidden md:flex'>
-                {/*<FaRegBell size={20} className='mr-2'/>
-                <BsPerson size={20}/>*/}
-                <button className='mr-2 buttonWhite'>Login</button>
-                <button className='buttonBlue'>Sign Up</button>
+                {user? 
+                <div className='flex'>
+                    <FaRegBell size={20} className='mr-2'/>
+                    <button className='buttonWhite' onClick={logout}>Logout</button>
+                </div>
+                :
+                <div className='flex'>
+                    <button className='mr-2 buttonWhite'>Login</button>
+                    <button className='buttonBlue'>Sign Up</button>
+                </div> }                
             </div>
 
             <div onClick={handleOpen}
@@ -55,12 +60,16 @@ export const Header = () => {
                 <h4>WANDERWAYS</h4>
             </div>
                 <ul className='mobileNavList'>
-                    <li>Home</li>
+                    <li onClick={() => navigate("/")}>Home</li>
                     <li>About</li>
-                    <li>Destinations</li>
+                    <li onClick={() => navigate("/tours")}>Destinations</li>
                     <div className='flex flex-col gap-3 my-4'>
                         <button className='buttonBlue'>Notifications</button>
-                        <button className='buttonBlue'>Account</button>
+                        {user?
+                        <button className='buttonBlue' onClick={logout}>Logout</button>
+                        :
+                        <button className='buttonBlue' onClick={() => navigate("/login")}>Login</button>
+                        }
                     </div>
                     <div className='flex justify-between mediaIcons'>
                         <FaFacebook/>

@@ -68,24 +68,16 @@ export const TourDetails = () => {
     setTourRating(rating === tourRating ? 0 : rating);
   }; 
   
-   const Tour = 
-   { _id: 1,
-     photo: "https://cdn.pixabay.com/photo/2015/10/30/20/13/sunrise-1014712_1280.jpg",
-     title: "New Zealand",
-     city: "Tokyo",
-     price: 400
-   }
-
   return (
     <section className='max-w-[1640px] mx-auto py-4 bg-gradient-to-b from-lightGreen to-white'>
       <div className="max-w-[1180px] mx-auto grid grid-cols-1 md:grid-cols-[63%_37%] gap-3">
         {/*Tour Details*/}
         <div id='product' className='grid grid-cols w-full'>
             {/*Image*/}
-            <img src={Tour.photo} alt="tour landscape" className='rounded' />
+            <img src={photo} alt="tour landscape" className='rounded' />
             {/*Description*/}
             <div id='description' className='detailContainer'>
-                <h4>{Tour.title}</h4>
+                <h4>{title}</h4>
                 <div className='tourDetail mb-2'>
                     <div>
                       <BsFillStarFill className='text-yellow mr-1'/>
@@ -95,11 +87,11 @@ export const TourDetails = () => {
                 <div className='tourDetail'>
                     <div>
                         <FaLocationDot className='text-darkGreen mr-1'/>
-                        <span>{Tour.city}</span>
+                        <span>{city}</span>
                     </div>
                     <div>
                         <MdOutlineAttachMoney className='text-darkGreen'/>
-                        <span>{Tour.price} per person</span>
+                        <span>{price} per person</span>
                     </div>
                     <div>
                         <BsFillPeopleFill className='text-darkGreen mr-1'/>
@@ -108,7 +100,7 @@ export const TourDetails = () => {
                 </div>
                 <div className='mt-3'>
                     <h5>Description</h5>
-                    <p className='text-sm'>{desc} Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae repudiandae illo dolore quisquam recusandae itaque laboriosam odio nostrum provident, facilis blanditiis similique harum vitae unde expedita in deserunt consectetur eos.</p>
+                    <p className='text-sm'>{desc}</p>
                 </div>
             </div>
 

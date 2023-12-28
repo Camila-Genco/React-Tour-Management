@@ -4,6 +4,7 @@ import { SearchTour } from '../components/Home/SearchTour'
 import { Items } from '../../src/components/Home/Items'
 import { BASE_URL } from '../utils/config'
 import useFetch from '../hooks/useFetch'
+import tourImg from "./../assets/images/tourSearchImg.jpg"
 
 
 export const Tours = () => {
@@ -19,7 +20,7 @@ export const Tours = () => {
                     <SearchTour/>
                 </div>
             </div>
-            <img className='tourImg' src="https://images.unsplash.com/photo-1466278313810-9aca9abea861?q=80&w=1897&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt='hero'/>
+            <img className='tourImg' src={tourImg} alt='hero'/>
         </div>
 
         {/*Tour Display*/}

@@ -1,7 +1,12 @@
 import React from 'react'
+
 import { FaStar } from 'react-icons/fa'
 import { PiMountainsBold } from 'react-icons/pi'
 import { RiDoubleQuotesR } from 'react-icons/ri'
+
+import customer1 from "../../assets/images/customer1.jpg"
+import customer2 from "../../assets/images/customer2.jpg"
+import customer3 from "../../assets/images/customer3.jpg"
 
 export const Comments = () => {
   return (
@@ -13,7 +18,7 @@ export const Comments = () => {
         </div>
         <div className='commentSection'>
             <div className='comment'>
-                <img src="https://cdn.pixabay.com/photo/2016/11/29/13/14/attractive-1869761_1280.jpg" alt="customer" className='commentImg'/>
+                <img src={customer1} alt="customer" className='commentImg'/>
                 <div className='flex flex-col items-center gap-3 my-3'>
                     <div className='commentInfo'>
                         <span>Janette Doe</span>
@@ -31,7 +36,7 @@ export const Comments = () => {
                 </div>
             </div>
             <div className='comment'>
-                <img src="https://cdn.pixabay.com/photo/2018/02/16/14/38/portrait-3157821_1280.jpg" alt="customer" className='commentImg'/>
+                <img src={customer2} alt="customer" className='commentImg'/>
                 <div className='flex flex-col items-center justify-end my-3 gap-3'>
                     <div className='commentInfo'>
                         <span>John Doe</span>
@@ -49,7 +54,7 @@ export const Comments = () => {
                 </div>
             </div>
             <div className='comment'>
-                <img src="https://cdn.pixabay.com/photo/2018/03/01/14/57/portrait-3190849_1280.jpg" alt="customer" className='commentImg'/>
+                <img src={customer3} alt="customer" className='commentImg'/>
                 <div className='flex flex-col items-center justify-end my-3 gap-3'>
                     <div className='commentInfo'>
                         <span>Jane Doe</span>

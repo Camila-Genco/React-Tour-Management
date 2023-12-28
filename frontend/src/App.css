@@ -4,7 +4,7 @@
 @tailwind components;
 @tailwind utilities;
 
-
+/*Forms*/
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
@@ -18,64 +18,35 @@ input[type="password"]
   margin-bottom: 1rem;
   border-radius: 0.25rem;
   background-color: #CCD4E7;
-  
 }
 
-.socialIcons > * {
-  width: 1.25rem; 
-  height: 1.5rem; 
-  cursor: pointer;
+/*Navbar*/
+.nav {
+  position: relative;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.nav::before {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: transparent;
+  transition: background-color 0.3s, width 0.3s;
+} 
+.nav:hover::before {
+  background-color: #3F5CB8;
+  width: 100%; 
 }
 
-
-
-  .overlay {
-    opacity: 0;
-    transition: opacity 0.3s ease-out;
-  }
-  
-  /* Show the overlay on hover */
-  .image:hover .overlay {
-    opacity: 1;
-    display: flex;
-    }
-
-  .nav {
-    position: relative;
-    text-decoration: none;
-    transition: color 0.3s; /* Transition for color change */
-  }
-  
-  .nav::before {
-    content: '';
-    position: absolute;
-    width: 0%;
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: transparent;
-    transition: background-color 0.3s, width 0.3s; /* Transition for underline */
-  }
-  
-  .nav:hover::before {
-    background-color: #3F5CB8; /* Change to your preferred underline color */
-    width: 100%; /* Underline width */
-  }
-
-  .custom-height {
-    min-height: calc(100vh - 64px); /* Subtracting 64px (example height) for the navbar */
-  }
-
-.img {
-  border-top-left-radius: 80px;
-  width: 700px;
-  height: auto;
-}
-
+/*Services*/
 .smooth-transition {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+/*Reviews*/
 .commentImg {
   border-radius: 50%;
   height: 105px;
@@ -84,37 +55,60 @@ input[type="password"]
   object-fit: cover;
 }
 
+/*Upcoming Tours*/
+.overlay {
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
+}
+.image:hover .overlay {
+  opacity: 1;
+  display: flex;
+}
+
+/*Footer*/
+.socialIcons > * {
+  width: 1.25rem; 
+  height: 1.5rem; 
+  cursor: pointer;
+}
+
+/*Login and Register pages*/
+.custom-height {
+  min-height: calc(100vh - 64px); 
+}
+
 @layer base{
   * {
     font-family: 'Lexend Deca', sans-serif;
   }
-  li {
-    @apply p-4
-  }
   h1 {
-    @apply text-lg font-bold text-white text-center
-  }
-  h2 {
-    @apply text-lg 
+    @apply font-bold text-white text-center
   }
   h3 {
-    @apply font-bold text-3xl tracking-wide
+    @apply font-bold tracking-wide
   }
-  h5 {
-    @apply text-lg
+  input {
+    @apply text-sm outline-none px-2 text-darkGray
+  }
+  li {
+    @apply p-4
   }
   button {
     @apply px-3 py-2 rounded
   }
+  .buttonWhite {
+    @apply bg-white border border-darkGreen text-darkGreen hover:bg-darkGreen hover:text-white rounded
+  }
+  .buttonBlue {
+    @apply bg-darkGreen border border-darkGreen hover:bg-blue-800 rounded text-white
+  }
   p {
     @apply font-light text-sm
   }
-  .heroOverlay {
-    @apply absolute w-full h-full max-h-[500px] bg-black/40 flex flex-col items-center rounded-full pt-20 shadow-lg shadow-gray
+  .gradient {
+    @apply bg-gradient-to-t from-lightGreen to-white w-full h-full
   }
-  .heroImg {
-    @apply w-full max-h-[500px] object-cover rounded-full
-  }
+  /*Navbar*/
   .mediaIcons > * {
     @apply text-2xl cursor-pointer text-darkGreen
   }
@@ -122,14 +116,33 @@ input[type="password"]
     @apply text-darkGray no-underline hover:text-black
   }
   .mobileNavList > * {
-    @apply first-letter:cursor-pointer hover:text-darkGreen
+    @apply cursor-pointer hover:text-darkGreen
   }
+  /*Hero*/
+  .heroOverlay {
+    @apply absolute w-full h-full max-h-[500px] bg-black/40 flex flex-col items-center rounded-full pt-20 shadow-lg shadow-gray
+  }
+  .heroImg {
+    @apply w-full max-h-[500px] object-cover rounded-full
+  }
+  /*Section styles*/
   .sectionTitle {
     @apply flex flex-col items-center mb-7
   }
   .sectionTitle div {
     @apply text-3xl tracking-wide font-bold
   }
+  /*Upcoming Tours*/
+  .overlay {
+    @apply hidden rounded absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 text-white items-start justify-start p-5 transition-opacity duration-300
+  }
+  .promoCard {
+    @apply max-w-[250px] h-[350px] object-cover rounded lg:mt-2 image relative 
+  }
+  .promoCard img {
+    @apply max-w-[250px] h-[350px] object-cover rounded 
+  }
+  /*Services*/
   .serviceContainer {
     @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-[75%] pb-8
   }
@@ -139,6 +152,7 @@ input[type="password"]
   .service p {
     @apply text-center w-[70%]
   }
+  /*Reviews*/
   .commentSection {
     @apply max-w-[75%] m-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-0 place-items-center
   }
@@ -154,45 +168,21 @@ input[type="password"]
   .commentInfo div {
     @apply flex text-yellow text-center
   }
-  h6 div {
-    @apply cursor-pointer
-  }
+  /*Login and Register page*/
   .authContainer {
     @apply min-w-[40%] h-auto flex flex-col bg-darkGreen shadow-lg p-10 rounded-xl text-center
-  }
-  .buttonWhite {
-    @apply bg-white border border-darkGreen text-darkGreen hover:bg-darkGreen hover:text-white rounded
-  }
-  .buttonBlue {
-    @apply bg-darkGreen border border-darkGreen hover:bg-blue-800 rounded text-white
-  }
-  input {
-    @apply text-sm outline-none px-2 text-darkGray
-  }
-  .socialIcons {
-    @apply flex gap-4 pt-3
-  }
-  .tourOverlay {
-    @apply h-screen lg:max-h-[400px] w-full absolute bg-black/40 flex flex-col items-center pt-20 shadow-lg
-  }
-  .tourImg {
-    @apply w-full h-screen lg:max-h-[400px] object-cover
   }
   .submitButton {
     @apply rounded-xl h-12 my-4 bg-white border border-darkGreen text-darkGreen hover:bg-white hover:font-bold tracking-widest
   }
-  .overlay {
-    @apply hidden rounded absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 text-white items-start justify-start p-5 transition-opacity duration-300
+  /*Tour page*/
+  .tourImg {
+    @apply w-full h-screen lg:max-h-[400px] object-cover
   }
-  .promoCard {
-    @apply max-w-[250px] h-[350px] object-cover rounded lg:mt-2 image relative 
+  .tourOverlay {
+    @apply h-screen lg:max-h-[400px] w-full absolute bg-black/40 flex flex-col items-center pt-20 shadow-lg
   }
-  .promoCard img {
-    @apply max-w-[250px] h-[350px] object-cover rounded 
-  }
-  .gradient {
-    @apply bg-gradient-to-t from-lightGreen to-white w-full h-full
-  }
+  /*Cart page*/  
   .checkout input {
     @apply bg-lightGreen p-2 rounded text-darkGray px-3
   }
@@ -208,8 +198,15 @@ input[type="password"]
   .tourDetail div {
     @apply flex items-center
   }
+  /*Footer*/
+  h6 div {
+    @apply cursor-pointer
+  }
   .footerLinks div{
     @apply cursor-pointer
+  }
+  .socialIcons {
+    @apply flex gap-4 pt-3
   }
 }
 
