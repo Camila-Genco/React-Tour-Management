@@ -19,12 +19,12 @@ const corsOptions ={
 }
 
 //testing
-/*app.get("/", (req, res)=>{
+app.get("/", (req, res)=>{
     res.send("api is working");
-});*/
+});
 
 //database connection 
-/*const connect = async()=>{
+const connect = async()=>{
     try {
         await mongoose.connect(process.env.MONGO_URI, {
             useNewUrlParser:true,
@@ -36,7 +36,7 @@ const corsOptions ={
     } catch (err) {
         console.log("MongoDB connection failed");
     }
-}*/
+}
 
 //middlewares
 app.use(express.json());
