@@ -14,16 +14,13 @@ This application showcases a responsive, fully-functional Travel Booking website
 Here are screenshots that show the Booking demo application in use.
 
 **Home Page**
-//
-
-**Tours Page**
-//
+![tour-home (1)](https://github.com/Camila-Genco/tour-management/assets/98172802/b0a125f7-a2de-412f-8913-5c3264101478)
 
 **Tour Detail/Booking Page**
-//
+![tour-detail](https://github.com/Camila-Genco/tour-management/assets/98172802/510101be-3238-4206-ba36-59bd2bb95502)
 
-**Login/Sign Up Page**
-//
+**Sign Up Page**
+![tour-sign](https://github.com/Camila-Genco/tour-management/assets/98172802/dda85564-f730-411f-ab45-0c6ef76388b6)
 
 
 ### Dependencies
